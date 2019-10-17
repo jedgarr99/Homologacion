@@ -1,0 +1,55 @@
+--Data Source=CC102-16\SA;Initial Catalog=baseServiciosItam;User ID=sa
+create database baseServiciosItam; 
+
+use baseServiciosItam; 
+
+create table departamentos
+(idDepartamento smallint not null primary key, 
+ nombre char(30),
+ nombre char(30)
+); 
+
+
+create table materias 
+   (idMateria smallint  not null primary key, 
+nombre  char(50), 
+nombreDirector  char(50),
+apellido char(50),
+idDepartamento smallint references departamentos,
+idAlumno smallint references alumnos ); 
+
+create table alumnos (idAlumno smallint not null primary key, 
+nombre varchar(30), 
+apellido varchar(50), 
+contraseña  varchar(30));
+
+create table servicios
+   (idServicio smallint  not null primary key, 
+lugar char(50), 
+tipo char(20),
+horaInicio Date,
+horaFin Date,
+curso char(50),
+año smallint,
+idMateria smallint references materias,
+idDocente smallint references docentes 
+); 
+
+
+create table docentes 
+(idDocente smallint not null primary key, 
+ nombre char(30),
+ apellido char(50),
+ tipo char(30),
+); 
+use baseServiciosItam; 
+create table usuarios
+
+(idUsuario smallint not null primary key,
+
+nombreUsuario varchar(30),
+
+contra varchar(30)); 
+ INSERT INTO usuarios VALUES(1,'Jorge','Jorge');     
+  INSERT INTO usuarios VALUES(2,'Toño','Toño');
+   INSERT INTO usuarios VALUES(3,'Jolu','Jolu');
