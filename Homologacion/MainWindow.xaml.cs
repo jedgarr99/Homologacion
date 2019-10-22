@@ -29,10 +29,10 @@ namespace Homologacion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AgregarServicio w = new AgregarServicio();
+            /*AgregarServicio w = new AgregarServicio();
             w.Show();
             this.Close();
-            /*
+            */
             String res = Conexion.comprobarPwd(txUsuario.Text, txContraseña.Text);
             if (res.Equals("contraseña correcta"))
             {
@@ -46,7 +46,7 @@ namespace Homologacion
                 MessageBox.Show(res);
 
             }
-               */
+               
 
         }
     }

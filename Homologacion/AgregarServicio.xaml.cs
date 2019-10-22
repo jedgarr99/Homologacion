@@ -89,18 +89,6 @@ namespace Homologacion
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Menu w = new Menu();
-            w.Show();
-            this.Close();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Menu w = new Menu();
-            w.Show();
-            this.Close();
-        }
 
         private void CbTipo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -120,6 +108,7 @@ namespace Homologacion
         {
             AgregarServicio w = new AgregarServicio();
             w.Show();
+            
             this.Close();
         }
 
@@ -152,6 +141,12 @@ namespace Homologacion
             BuscarServicio w = new BuscarServicio();
             w.Show();
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            String id = txId.Text;
+            String lugar = txLugar.Text;
         }
     }
 }

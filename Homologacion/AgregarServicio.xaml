@@ -29,31 +29,29 @@
         <TextBox x:Name="txLugar" HorizontalAlignment="Left" Height="23" Margin="75,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Lugar" HorizontalAlignment="Left" Margin="40,100,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#66C2FFF9"/>
         <Label Content="Tipo" HorizontalAlignment="Left" Margin="40,141,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#66C2FFF9"/>
-        <Button Content="Agregar" HorizontalAlignment="Left" Margin="481,283,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click" Grid.Column="1" Height="48" Background="#FFA6FD9D"/>
-        <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="316,185,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Grid.Column="1"/>
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="454,281,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click" Grid.Column="1" Height="48" Background="#FF4FF33E"/>
         <ComboBox x:Name="cbTipo" Grid.Column="1" HorizontalAlignment="Left" Margin="75,142,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbTipo_SelectionChanged"/>
         <ComboBox x:Name="cbMateria" Grid.Column="1" HorizontalAlignment="Left" Margin="290,99,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cbDepartamento" Grid.Column="1" HorizontalAlignment="Left" Margin="481,102,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Materia" Grid.Column="1" HorizontalAlignment="Left" Margin="290,56,0,0" VerticalAlignment="Top" OpacityMask="#FFB7FFF8" Background="#66C2FFF9"/>
-        <Label Content="Departamento" Grid.Column="1" HorizontalAlignment="Left" Margin="481,56,0,0" VerticalAlignment="Top" Height="36" Width="86" Background="#66C2FFF9">
-            <Label.OpacityMask>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF37F4FD" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Label.OpacityMask>
-        </Label>
+        <Label Content="Materia" Grid.Column="1" HorizontalAlignment="Left" Margin="290,56,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9"/>
+        <Label Content="Departamento" Grid.Column="1" HorizontalAlignment="Left" Margin="481,56,0,0" VerticalAlignment="Top" Height="36" Width="86" Background="#66C2FFF9" OpacityMask="Black"/>
         <Label Content="Hora de Inicio" HorizontalAlignment="Left" Margin="40,185,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#FFC2FFF9"/>
         <Label Content="Hora de Fin" HorizontalAlignment="Left" Margin="40,281,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#FFC2FFF9"/>
         <ListBox x:Name="lbInicio" Grid.Column="1" HorizontalAlignment="Left" Height="70" Margin="75,188,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="LbInicio_SelectionChanged"/>
         <ListBox x:Name="lbFin" Grid.Column="1" HorizontalAlignment="Left" Height="70" Margin="75,276,0,0" VerticalAlignment="Top" Width="100"/>
-        <Canvas HorizontalAlignment="Left" Height="40                 " Margin="-4,0,0,0" VerticalAlignment="Top" Width="696" Grid.ColumnSpan="2">
-            <Button x:Name="btEliminar" Content="Eliminar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Eliminar" RenderTransformOrigin="0.293,0.527" Background="#FF70FFC4" Foreground="White" FontWeight="Medium"/>
-            <Button x:Name="btAgregar1" Content="Agregar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Agregar" Canvas.Left="138" Background="#FF70FFC4" Foreground="White" FontWeight="Medium"/>
-            <Button x:Name="btModificar" Content="Modificar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="BtModificar_Click" Canvas.Left="278" Background="#FF70FFC4" Foreground="White" FontWeight="Medium"/>
-            <Button x:Name="btBuscar" Content="Buscar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="BtBuscar_Click" Canvas.Left="418" Background="#FF70FFC4" Foreground="White" FontWeight="Medium"/>
-            <Button x:Name="btRegresar1" Content="Regresar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140                 " Height="40" Click="BtRegresar_Click" Canvas.Left="558" Foreground="White" FontWeight="Medium" Background="#FF70FFC4"/>
+        <Canvas HorizontalAlignment="Left" Height="40                 " Margin="-4,0,0,0" VerticalAlignment="Top" Width="696" Grid.ColumnSpan="2" OpacityMask="Black">
+            <Button x:Name="btEliminar" Content="Eliminar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Eliminar" RenderTransformOrigin="0.293,0.527" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium" OpacityMask="Black"/>
+            <Button x:Name="btAgregar1" Content="Agregar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Agregar" Canvas.Left="138" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium" OpacityMask="#FF060000"/>
+            <Button x:Name="btModificar" Content="Modificar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="BtModificar_Click" Canvas.Left="278" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium" OpacityMask="Black"/>
+            <Button x:Name="btBuscar" Content="Buscar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="BtBuscar_Click" Canvas.Left="418" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium" OpacityMask="Black"/>
+            <Button x:Name="btRegresar1" Content="Salir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140                 " Height="40" Click="BtRegresar_Click" Canvas.Left="558" Foreground="Black" FontWeight="Medium" Background="#FF70FFC4" OpacityMask="Black"/>
         </Canvas>
+        <CheckBox x:Name="cbLunes" Content="Lunes" Grid.Column="1" HorizontalAlignment="Left" Margin="217,229,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbMartes" Content="Martes" Grid.Column="1" HorizontalAlignment="Left" Margin="217,252,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbMiercoles" Content="Miercoles" Grid.Column="1" HorizontalAlignment="Left" Margin="217,272,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbJueves" Content="Jueves" Grid.Column="1" HorizontalAlignment="Left" Margin="217,295,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbViernes" Content="Viernes" Grid.Column="1" HorizontalAlignment="Left" Margin="217,317,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dias de la Semana" Grid.Column="1" HorizontalAlignment="Left" Margin="217,193,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9"/>
 
     </Grid>
 </Window>

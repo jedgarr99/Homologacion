@@ -18,7 +18,9 @@ namespace Homologacion
             SqlConnection cnn;
             try
             {
-                cnn = new SqlConnection("Data Source=CC102-16\\SA;Initial Catalog=baseServiciosItam;User ID=sa;Password=adminadmin");
+                
+                cnn = new SqlConnection("Data Source = JORGE; Initial Catalog = baseServiciosItam; User ID = sa; Password = sqladmin");
+                //cnn = new SqlConnection("Data Source=CC102-16\\SA;Initial Catalog=baseServiciosItam;User ID=sa;Password=adminadmin");
                 cnn.Open();
                 //MessageBox.Show("Si se pudo hacer la coneccion");
             }

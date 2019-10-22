@@ -18,13 +18,14 @@ namespace Homologacion
         protected String curso { get; set; }
         protected Int32 año { get; set; }
         protected Int32 idMateria { get; set; }
+        protected String dia { get; set; }
 
 
         public Servicio(short idServicio)
         {
             this.idServicio = idServicio;
         }
-        public Servicio(short idServicio, string lugar, string tipo, DateTime horaInicio, DateTime horaFin, String curso, Int32 año)
+        public Servicio(short idServicio, string lugar, string tipo, DateTime horaInicio, DateTime horaFin, String curso, Int32 año,String dia )
         {
             this.idServicio = idServicio;
             this.lugar = lugar;
@@ -33,6 +34,7 @@ namespace Homologacion
             this.horaFin = horaFin;
             this.curso = curso;
             this.año = año;
+            this.dia = dia;
         }
         public Servicio()
         {
@@ -49,7 +51,7 @@ namespace Homologacion
                 SqlConnection con;
                 con = Conexion.conectar();
                 //command para ejecutar ek query (insert)
-                SqlCommand cmd = new SqlCommand(String.Format("insert into servicio (idServicio, lugar, horaInicio, horaFin, curso, año) values ({0}, '{1}','{2}','{3}',{4},{5}) ", s.idServicio, s.lugar, s.tipo, s.horaInicio, s.horaFin, s.curso, s.año), con);
+                SqlCommand cmd = new SqlCommand(String.Format("insert into servicio (idServicio, lugar, horaInicio, horaFin, curso, año,dia) values ({0}, '{1}','{2}','{3}',{4},{5},'{6}') ", s.idServicio, s.lugar, s.tipo, s.horaInicio, s.horaFin, s.curso, s.año,s.dia), con);
                 res = cmd.ExecuteNonQuery(); //núm de registros afectos 
                                              //CERRAR CONEXIÓN
                 con.Close();
