@@ -90,7 +90,7 @@ namespace Homologacion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -108,6 +108,12 @@ namespace Homologacion
         private void LbInicio_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MessageBox.Show( lbInicio.SelectedIndex.ToString());
+            int pos = lbInicio.SelectedIndex;
+            pos += 3;
+            string x = lbFin.Items[pos].ToString();
+            lbFin.ScrollIntoView(x);
         }
+
+        
     }
 }
