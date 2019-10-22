@@ -5,13 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homologacion"
         mc:Ignorable="d"
-        Title="BuscarServicio" Height="400" Width="550">
+        Title="BuscarServicio" Height="400" Width="700">
     <Grid>
         <Button x:Name="btBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="52,210,0,0" VerticalAlignment="Top" Width="75" Click="BtBuscar_Click"/>
         <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="52,262,0,0" VerticalAlignment="Top" Width="75" Click="BtRegresar_Click"/>
-        <Label Content="ID Servicio" HorizontalAlignment="Left" Margin="52,52,0,0" VerticalAlignment="Top"/>
+        <Label Content="ID Servicio" HorizontalAlignment="Left" Margin="52,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.618,1.304"/>
         <TextBox x:Name="txBuscar" HorizontalAlignment="Left" Height="23" Margin="37,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid HorizontalAlignment="Left" Height="313" Margin="181,18,0,0" VerticalAlignment="Top" Width="303"/>
+        <DataGrid HorizontalAlignment="Left" Height="313" Margin="186,56,0,0" VerticalAlignment="Top" Width="303"/>
+        <Canvas HorizontalAlignment="Left" Height="40                 " Margin="-4,0,-150,0" VerticalAlignment="Top" Width="696">
+            <Button x:Name="btEliminar" Content="Eliminar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Eliminar" RenderTransformOrigin="0.293,0.527" Background="#FF70FFC4" Foreground="White" FontWeight="Medium"/>
+            <Button x:Name="btAgregar1" Content="Agregar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Agregar" Canvas.Left="138" Background="#FF70FFC4" Foreground="White" FontWeight="Medium"/>
+            <Button x:Name="btModificar" Content="Modificar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="BtModificar_Click" Canvas.Left="278" Background="#FF70FFC4" Foreground="White" FontWeight="Medium"/>
+            <Button x:Name="btBuscar1" Content="Buscar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="BtBuscar_Click" Canvas.Left="418" Background="#FF70FFC4" Foreground="White" FontWeight="Medium"/>
+            <Button x:Name="btRegresar1" Content="Salir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140                 " Height="40" Click="BtRegresar_Click" Canvas.Left="558" Foreground="White" FontWeight="Medium" Background="#FF70FFC4"/>
+        </Canvas>
 
     </Grid>
 </Window>

@@ -88,12 +88,14 @@ namespace Homologacion
             lbFin.Items.Add("21:30");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Menu w = new Menu();
+            w.Show();
+            this.Close();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             Menu w = new Menu();
             w.Show();
@@ -114,6 +116,42 @@ namespace Homologacion
             lbFin.ScrollIntoView(x);
         }
 
-        
+        private void Button_Agregar(object sender, RoutedEventArgs e)
+        {
+            AgregarServicio w = new AgregarServicio();
+            w.Show();
+            this.Close();
+        }
+
+        private void Button_Eliminar(object sender, RoutedEventArgs e)
+        {
+            EliminarServicio w = new EliminarServicio();
+            w.Show();
+            this.Close();
+
+        }
+
+    
+
+        private void BtRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = new MainWindow();
+            w.Show();
+            this.Close();
+        }
+
+        private void BtModificar_Click(object sender, RoutedEventArgs e)
+        {
+            ModificarServicio w = new ModificarServicio();
+            w.Show();
+            this.Close();
+        }
+
+        private void BtBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            BuscarServicio w = new BuscarServicio();
+            w.Show();
+            this.Close();
+        }
     }
 }

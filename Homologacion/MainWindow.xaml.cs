@@ -29,7 +29,7 @@ namespace Homologacion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Menu w = new Menu();
+            AgregarServicio w = new AgregarServicio();
             w.Show();
             this.Close();
             /*
@@ -37,9 +37,9 @@ namespace Homologacion
             if (res.Equals("contraseña correcta"))
             {
                 //MessageBox.Show("Mandar a la siguiente pantalla");
-                Menu w = new Menu();
-                w.Show();
-                this.Close();
+                 AgregarServicio w = new AgregarServicio();
+            w.Show();
+            this.Close();
             }
             else
             {
