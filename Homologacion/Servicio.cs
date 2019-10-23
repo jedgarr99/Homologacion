@@ -13,11 +13,12 @@ namespace Homologacion
         protected Int32 idServicio { get; set; }
         protected String lugar { get; set; }
         protected String tipo { get; set; }
-        protected DateTime horaInicio { get; set; }
-        protected DateTime horaFin { get; set; }
+        protected String horaInicio { get; set; }
+        protected String horaFin { get; set; }
         protected String curso { get; set; }
         protected Int32 año { get; set; }
         protected Int32 idMateria { get; set; }
+        protected Int32 idDocente { get; set; }
         protected String dia { get; set; }
 
 
@@ -25,7 +26,7 @@ namespace Homologacion
         {
             this.idServicio = idServicio;
         }
-        public Servicio(short idServicio, string lugar, string tipo, DateTime horaInicio, DateTime horaFin, String curso, Int32 año,String dia )
+        public Servicio(short idServicio, string lugar, string tipo, String horaInicio, String horaFin, String curso, Int32 año, Int32 idMateria,String dia )
         {
             this.idServicio = idServicio;
             this.lugar = lugar;
@@ -34,6 +35,8 @@ namespace Homologacion
             this.horaFin = horaFin;
             this.curso = curso;
             this.año = año;
+            this.idMateria = idMateria;
+            this.idDocente = 0;//corregir
             this.dia = dia;
         }
         public Servicio()
@@ -51,7 +54,7 @@ namespace Homologacion
                 SqlConnection con;
                 con = Conexion.conectar();
                 //command para ejecutar ek query (insert)
-                SqlCommand cmd = new SqlCommand(String.Format("insert into servicio (idServicio, lugar, horaInicio, horaFin, curso, año,dia) values ({0}, '{1}','{2}','{3}',{4},{5},'{6}') ", s.idServicio, s.lugar, s.tipo, s.horaInicio, s.horaFin, s.curso, s.año,s.dia), con);
+                SqlCommand cmd = new SqlCommand(String.Format("insert into servicios (idServicio, lugar, tipo, horaInicio, horaFin, curso, año,idMateria,idDocente,dia) values ({0}, '{1}','{2}','{3}','{4}','{5}',{6},{7},{8},'{9}')", s.idServicio, s.lugar, s.tipo, s.horaInicio, s.horaFin, s.curso, s.año,s.idMateria,s.idDocente,s.dia), con);
                 res = cmd.ExecuteNonQuery(); //núm de registros afectos 
                                              //CERRAR CONEXIÓN
                 con.Close();
@@ -129,8 +132,8 @@ namespace Homologacion
                 s.idServicio = rd.GetInt16(0);
                 s.lugar = rd.GetString(1);
                 s.tipo = rd.GetString(2);
-                s.horaInicio = rd.GetDateTime(3);
-                s.horaFin = rd.GetDateTime(4);
+                s.horaInicio = rd.GetString(3);
+                s.horaFin = rd.GetString(4);
                 s.año = rd.GetInt16(5);
                 lis.Add(s);
 
