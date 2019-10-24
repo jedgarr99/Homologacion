@@ -21,19 +21,19 @@
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="81*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="txLugar" HorizontalAlignment="Left" Height="23" Margin="75,61.275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Lugar" HorizontalAlignment="Left" Margin="40,59.275,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#66C2FFF9" Grid.Row="1"/>
-        <Label Content="Tipo" HorizontalAlignment="Left" Margin="40,100.275,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#66C2FFF9" Grid.Row="1"/>
-        <Button Content="Agregar" HorizontalAlignment="Left" Margin="454,240.275,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click" Grid.Column="1" Height="48" Background="#FF4FF33E" Grid.Row="1"/>
-        <ComboBox x:Name="cbTipo" Grid.Column="1" HorizontalAlignment="Left" Margin="75,101.275,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbTipo_SelectionChanged" Grid.Row="1"/>
-        <ComboBox x:Name="cbMateria" Grid.Column="1" HorizontalAlignment="Left" Margin="290,58.275,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbMateria_SelectionChanged" Grid.Row="1"/>
-        <ComboBox x:Name="cbDepartamento" Grid.Column="1" HorizontalAlignment="Left" Margin="481,61.275,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <Label Content="Materia" Grid.Column="1" HorizontalAlignment="Left" Margin="481,19.275,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9" Grid.Row="1"/>
-        <Label Content="Departamento" Grid.Column="1" HorizontalAlignment="Left" Margin="290,17.275,0,0" VerticalAlignment="Top" Height="36" Width="86" Background="#66C2FFF9" OpacityMask="Black" RenderTransformOrigin="-1.21,0.634" Grid.Row="1"/>
-        <Label Content="Hora de Inicio" HorizontalAlignment="Left" Margin="40,144.275,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#FFC2FFF9" Grid.Row="1"/>
-        <Label Content="Hora de Fin" HorizontalAlignment="Left" Margin="40,240.275,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#FFC2FFF9" Grid.Row="1"/>
-        <ListBox x:Name="lbInicio" Grid.Column="1" HorizontalAlignment="Left" Height="70" Margin="75,147.275,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="LbInicio_SelectionChanged" Grid.Row="1"/>
-        <ListBox x:Name="lbFin" Grid.Column="1" HorizontalAlignment="Left" Height="70" Margin="75,235.275,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1"/>
+        <TextBox x:Name="txLugar" HorizontalAlignment="Left" Height="23" Margin="69,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Lugar" HorizontalAlignment="Left" Margin="34,39,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#66C2FFF9" Grid.Row="1"/>
+        <Label Content="Tipo" HorizontalAlignment="Left" Margin="34,80,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#66C2FFF9" Grid.Row="1"/>
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="465,228,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click" Grid.Column="1" Height="48" Background="#FF4FF33E" Grid.Row="1"/>
+        <ComboBox x:Name="cbTipo" Grid.Column="1" HorizontalAlignment="Left" Margin="69,81,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbTipo_SelectionChanged" Grid.Row="1"/>
+        <ComboBox x:Name="cbMateria" Grid.Column="1" HorizontalAlignment="Left" Margin="267,78,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbMateria_SelectionChanged" Grid.Row="1"/>
+        <ComboBox x:Name="cbDepartamento" Grid.Column="1" HorizontalAlignment="Left" Margin="458,81,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Label Content="Materia" Grid.Column="1" HorizontalAlignment="Left" Margin="458,39,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9" Grid.Row="1"/>
+        <Label Content="Departamento" Grid.Column="1" HorizontalAlignment="Left" Margin="267,37,0,0" VerticalAlignment="Top" Height="36" Width="86" Background="#66C2FFF9" OpacityMask="Black" RenderTransformOrigin="-1.21,0.634" Grid.Row="1"/>
+        <Label Content="Hora de Inicio" HorizontalAlignment="Left" Margin="34,124,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#FFC2FFF9" Grid.Row="1"/>
+        <Label Content="Hora de Fin" HorizontalAlignment="Left" Margin="34,220,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#FFC2FFF9" Grid.Row="1"/>
+        <ListBox x:Name="lbInicio" Grid.Column="1" HorizontalAlignment="Left" Height="70" Margin="69,127,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="LbInicio_SelectionChanged" Grid.Row="1"/>
+        <ListBox x:Name="lbFin" Grid.Column="1" HorizontalAlignment="Left" Height="70" Margin="69,215,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1"/>
         <Canvas HorizontalAlignment="Left" Height="40                 " Margin="-4,0,0,0" VerticalAlignment="Top" Width="696" Grid.ColumnSpan="2" OpacityMask="Black">
             <Button x:Name="btEliminar" Content="Eliminar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Eliminar" RenderTransformOrigin="0.293,0.527" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium" OpacityMask="Black"/>
             <Button x:Name="btAgregar1" Content="Agregar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Agregar" Canvas.Left="138" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium" OpacityMask="#FF060000"/>
@@ -41,12 +41,12 @@
             <Button x:Name="btBuscar" Content="Buscar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="BtBuscar_Click" Canvas.Left="418" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium" OpacityMask="Black"/>
             <Button x:Name="btRegresar1" Content="Salir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140                 " Height="40" Click="BtRegresar_Click" Canvas.Left="558" Foreground="Black" FontWeight="Medium" Background="#FF70FFC4" OpacityMask="Black"/>
         </Canvas>
-        <CheckBox x:Name="cbLunes" Content="Lunes" Grid.Column="1" HorizontalAlignment="Left" Margin="217,188.275,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <CheckBox x:Name="cbMartes" Content="Martes" Grid.Column="1" HorizontalAlignment="Left" Margin="217,211.275,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <CheckBox x:Name="cbMiercoles" Content="Miercoles" Grid.Column="1" HorizontalAlignment="Left" Margin="217,231.275,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <CheckBox x:Name="cbJueves" Content="Jueves" Grid.Column="1" HorizontalAlignment="Left" Margin="217,254.275,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <CheckBox x:Name="cbViernes" Content="Viernes" Grid.Column="1" HorizontalAlignment="Left" Margin="217,276.275,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label Content="Dias de la Semana" Grid.Column="1" HorizontalAlignment="Left" Margin="217,152.275,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9" Grid.Row="1"/>
+        <CheckBox x:Name="cbLunes" Content="Lunes" Grid.Column="1" HorizontalAlignment="Left" Margin="269,173,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <CheckBox x:Name="cbMartes" Content="Martes" Grid.Column="1" HorizontalAlignment="Left" Margin="269,196,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <CheckBox x:Name="cbMiercoles" Content="Miercoles" Grid.Column="1" HorizontalAlignment="Left" Margin="269,216,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <CheckBox x:Name="cbJueves" Content="Jueves" Grid.Column="1" HorizontalAlignment="Left" Margin="269,239,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <CheckBox x:Name="cbViernes" Content="Viernes" Grid.Column="1" HorizontalAlignment="Left" Margin="269,261,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Dias de la Semana" Grid.Column="1" HorizontalAlignment="Left" Margin="269,137,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9" Grid.Row="1"/>
 
     </Grid>
 </Window>

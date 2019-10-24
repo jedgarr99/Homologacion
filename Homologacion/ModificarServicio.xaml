@@ -21,17 +21,18 @@
             <Button x:Name="btRegresar1" Content="Salir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140                 " Height="40" Click="BtRegresar_Click" Canvas.Left="558" Foreground="Black" FontWeight="Medium" Background="#FF70FFC4"/>
         </Canvas>
         <Button x:Name="btModificar1" Content="Modificar" HorizontalAlignment="Left" Margin="511,303,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click" Height="48" Background="#FF4FF33E"/>
-        <Label Content="Hora de Inicio" HorizontalAlignment="Left" Margin="40,185,0,0" VerticalAlignment="Top" Background="#FFC2FFF9"/>
-        <Label Content="Hora de Fin" HorizontalAlignment="Left" Margin="40,281,0,0" VerticalAlignment="Top" Background="#FFC2FFF9"/>
-        <ListBox x:Name="lbFin" HorizontalAlignment="Left" Height="70" Margin="130,276,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label Content="ID Servicio" HorizontalAlignment="Left" Margin="27,108,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
-        <TextBox x:Name="txEliminar" HorizontalAlignment="Left" Height="23" Margin="145,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="cbLunes" Content="Lunes" HorizontalAlignment="Left" Margin="272,229,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbMartes" Content="Martes" HorizontalAlignment="Left" Margin="272,252,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbMiercoles" Content="Miercoles" HorizontalAlignment="Left" Margin="272,272,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbJueves" Content="Jueves" HorizontalAlignment="Left" Margin="272,295,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbViernes" Content="Viernes" HorizontalAlignment="Left" Margin="272,317,0,0" VerticalAlignment="Top"/>
-        <Label Content="Dias de la Semana" HorizontalAlignment="Left" Margin="272,193,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9"/>
+        <Label Content="Hora de Inicio" HorizontalAlignment="Left" Margin="218,189,0,0" VerticalAlignment="Top" Background="#FFC2FFF9"/>
+        <Label Content="Hora de Fin" HorizontalAlignment="Left" Margin="218,285,0,0" VerticalAlignment="Top" Background="#FFC2FFF9"/>
+        <ListBox x:Name="lbFin" HorizontalAlignment="Left" Height="70" Margin="308,280,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="ID Servicio" HorizontalAlignment="Left" Margin="52,110,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
+        <TextBox x:Name="txEliminar" HorizontalAlignment="Left" Height="23" Margin="155,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="cbLunes" Content="Lunes" HorizontalAlignment="Left" Margin="46,221,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbMartes" Content="Martes" HorizontalAlignment="Left" Margin="46,244,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbMiercoles" Content="Miercoles" HorizontalAlignment="Left" Margin="46,264,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbJueves" Content="Jueves" HorizontalAlignment="Left" Margin="46,287,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbViernes" Content="Viernes" HorizontalAlignment="Left" Margin="46,309,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dias de la Semana" HorizontalAlignment="Left" Margin="46,185,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9" RenderTransformOrigin="-1.335,2.082"/>
+        <ListBox x:Name="lbInicio" HorizontalAlignment="Left" Height="70" Margin="308,189,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

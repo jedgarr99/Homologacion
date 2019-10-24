@@ -26,7 +26,9 @@ namespace Homologacion
 
         private void BtEliminar_Click(object sender, RoutedEventArgs e)
         {
-
+            String cu = txEliminar.Text;
+            Servicio s = new Servicio();
+            s.eliminar(Int32.Parse(cu));
         }
 
         private void Button_Agregar(object sender, RoutedEventArgs e)
@@ -66,5 +68,6 @@ namespace Homologacion
             w.Show();
             this.Close();
         }
+
     }
 }

@@ -42,7 +42,16 @@ namespace Homologacion
         public Servicio()
         {
         }
-      
+        public Servicio(short idServicio, String hora, String dia)
+        {
+            this.idServicio = idServicio;
+            this.horaInicio = hora;
+            this.horaFin = hora;
+            this.dia = dia;
+        }
+        
+
+
         public int agregar(Servicio s)
         {
             int res = 0;
@@ -84,29 +93,47 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                res = -1;
+                MessageBox.Show("No se pudo eliminar el servicio \n" + ex);
             }
 
             return res;
 
         }
-        public int modificar(Servicio s)
+        public int modificarIn(Servicio s)
         {
+            SqlCommand cmd;
+            SqlConnection con;
             int res = 0;
             try
             {
-                //abrir la conexión
-                SqlConnection con;
+
                 con = Conexion.conectar();
-                //command para ejecutar ek query (update)
-                SqlCommand cmd = new SqlCommand(String.Format("update servicio set correo = '{0}'  where claveUnica = {1}",s.lugar,  s.idServicio), con);
-                res = cmd.ExecuteNonQuery(); //núm de registros afectos 
-                                             //CERRAR CONEXIÓN
-                con.Close();
+                cmd = new SqlCommand(String.Format("update servicios set horaInicio ='{0}' where idServicio = {1} and dia = {2}",s.horaInicio, s.idServicio, s.dia), con);
+                res = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Alumno  no creado" + ex);
+                MessageBox.Show("No se pudo modificar al alumno\n ");
+            }
+
+            return res;
+
+        }
+        public int modificarFin(Servicio s)
+        {
+            SqlCommand cmd;
+            SqlConnection con;
+            int res = 0;
+            try
+            {
+
+                con = Conexion.conectar();
+                cmd = new SqlCommand(String.Format("update servicios set horaFin ='{0}' where idServicio = {1} and dia = {2}", s.horaFin, s.idServicio, s.dia), con);
+                res = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo modificar al alumno\n ");
             }
 
             return res;
