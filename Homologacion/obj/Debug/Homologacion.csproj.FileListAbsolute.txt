@@ -56,7 +56,6 @@ C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\AgregarServicio.g.cs
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\BuscarServicio.g.cs
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\EliminarServicio.g.cs
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\MainWindow.g.cs
-C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\Menu.g.cs
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\ModificarServicio.g.cs
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\App.g.cs
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\Homologacion_MarkupCompile.cache
@@ -65,7 +64,6 @@ C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\AgregarServicio.baml
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\BuscarServicio.baml
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\EliminarServicio.baml
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\MainWindow.baml
-C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\Menu.baml
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\ModificarServicio.baml
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\Homologacion.g.resources
 C:\Users\dai\Desktop\Homologacion\Homologacion\obj\Debug\Homologacion.Properties.Resources.resources

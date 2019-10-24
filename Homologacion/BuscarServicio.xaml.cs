@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,47 @@ namespace Homologacion
         public BuscarServicio()
         {
             InitializeComponent();
+            SqlCommand cmd;
+            SqlDataReader rd;
+            SqlConnection con;
+          try
+            {
+
+                con = Conexion.conectar();
+                cmd = new SqlCommand("select nombre from departamentos", con);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    cbMateria.Items.Add(rd["nombre"].ToString());
+                }
+                //cb.SelectedIndex = 0;
+                rd.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se pudo llenar el combo" + ex);
+            }
+            try
+            {
+
+                con = Conexion.conectar();
+                cmd = new SqlCommand("select nombre from materias", con);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    cbDepartamento.Items.Add(rd["nombre"].ToString());
+                }
+                //cb.SelectedIndex = 0;
+                rd.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se pudo llenar el combo" + ex);
+            }
+
         }
 
-        
+
 
         private void Button_Agregar(object sender, RoutedEventArgs e)
         {
@@ -62,6 +101,70 @@ namespace Homologacion
             BuscarServicio w = new BuscarServicio();
             w.Show();
             this.Close();
+        }
+
+        private void cbMateria_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SqlCommand cmd;
+            SqlDataReader rd;
+            SqlConnection con;
+            int x = -1;
+            try
+            {
+                con = Conexion.conectar();
+                cmd = new SqlCommand(String.Format("select departamentos.idDepartamento from departamentos where departamentos.nombre = '{0}'", cbMateria.SelectedItem.ToString()), con);
+                rd = cmd.ExecuteReader();
+                rd.Read();
+                x = int.Parse(rd[0].ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Departamento invalido " + ex);
+            }
+
+            try
+            {
+                cbDepartamento.Items.Clear();
+                con = Conexion.conectar();
+                cmd = new SqlCommand(String.Format("select materias.nombre from materias where materias.idDepartamento = {0}", x), con);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    cbDepartamento.Items.Add(rd["nombre"].ToString());
+                }
+                //cb.SelectedIndex = 0;
+                rd.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se pudo llenar el combo" + ex);
+            }
+        }
+
+        private void BtBuscar(object sender, RoutedEventArgs e)
+        {
+            SqlCommand cmd;
+            SqlDataReader rd;
+            SqlConnection con;
+            int idMateria=0;
+            try
+            {
+                con = Conexion.conectar();
+                cmd = new SqlCommand(String.Format("select materias.idMateria from materias where materias.nombre='{0}'", cbDepartamento.SelectedItem.ToString()), con);
+                rd = cmd.ExecuteReader();
+                rd.Read();
+                idMateria = int.Parse(rd[0].ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Materia no encontrada \n " + ex);
+            }
+            Servicio s = new Servicio();
+            s.buscar(idMateria);
+        
+            dgBuscar1.ItemsSource = s.buscar(idMateria);
+
+
         }
     }
 }

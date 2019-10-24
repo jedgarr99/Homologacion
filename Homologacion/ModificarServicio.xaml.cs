@@ -131,51 +131,87 @@ namespace Homologacion
             String id = txEliminar.Text;
             Int32 x;
             StringBuilder bui = new StringBuilder();
-            String horaInicio = lbInicio.SelectedItem.ToString();
-            String horaFin = lbFin.SelectedItem.ToString();
-            Boolean bIn=false, bFin;
+            String horaInicio="", horaFin="";
+            Servicio s;
+            if (lbInicio.SelectedIndex!=-1)
+                horaInicio = lbInicio.SelectedItem.ToString();
+            if (lbFin.SelectedIndex != -1)
+                horaFin = lbFin.SelectedItem.ToString();
 
-            if (horaInicio != null)
-                bIn = true;
-            MessageBox.Show(bIn.ToString());
 
-            /*if (cbLunes.IsChecked.HasValue && cbLunes.IsChecked.Value)
+
+            if (cbLunes.IsChecked.HasValue && cbLunes.IsChecked.Value)
             {
-                s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Lunes");
-                s.agregar(s);
-                MessageBox.Show("Servicio agregado");
-                id++;
+                if (lbInicio.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaInicio, "Lunes");
+                    s.modificarIn(s);
+                }
+                if (lbFin.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaFin, "Lunes");
+                    s.modificarFin(s);
+                }
+             
             }
 
             if (cbMartes.IsChecked.HasValue && cbMartes.IsChecked.Value)
             {
-                s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Martes");
-                s.agregar(s);
-                id++;
+                if (lbInicio.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaInicio, "Martes");
+                    s.modificarIn(s);
+                }
+                if (lbFin.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaFin, "Martes");
+                    s.modificarFin(s);
+                }
 
             }
 
             if (cbMiercoles.IsChecked.HasValue && cbMiercoles.IsChecked.Value)
             {
-                s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Miercoles");
-                s.agregar(s);
-                id++;
+                if (lbInicio.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaInicio, "Miercoles");
+                    s.modificarIn(s);
+                }
+                if (lbFin.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaFin, "Miercoles");
+                    s.modificarFin(s);
+                }
             }
 
             if (cbJueves.IsChecked.HasValue && cbJueves.IsChecked.Value)
             {
-                s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Jueves");
-                s.agregar(s);
-                id++;
+                if (lbInicio.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaInicio, "Jueves");
+                    s.modificarIn(s);
+                }
+                if (lbFin.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaFin, "Jueves");
+                    s.modificarFin(s);
+                }
             }
 
             if (cbViernes.IsChecked.HasValue && cbViernes.IsChecked.Value)
             {
-                s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Viernes");
-                s.agregar(s);
-                id++;
+                if (lbInicio.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaInicio, "Viernes");
+                    s.modificarIn(s);
+                }
+                if (lbFin.SelectedIndex != -1)
+                {
+                    s = new Servicio(short.Parse(id), horaFin, "Viernes");
+                    s.modificarFin(s);
+                }
             }
-            */
+            
         }
     }
 }

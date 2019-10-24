@@ -42,6 +42,7 @@ namespace Homologacion
         public Servicio()
         {
         }
+     
         public Servicio(short idServicio, String hora, String dia)
         {
             this.idServicio = idServicio;
@@ -85,7 +86,7 @@ namespace Homologacion
                 con = Conexion.conectar();
 
                 //command para ejecutar el query (insert)
-                SqlCommand cmd = new SqlCommand(String.Format("delete from servicio where idServicio = {0}", cu), con);
+                SqlCommand cmd = new SqlCommand(String.Format("delete from servicios where idServicio = {0}", cu), con);
                 //ejecutar query
                 res = cmd.ExecuteNonQuery();
                 //cerrar conexion
@@ -139,7 +140,7 @@ namespace Homologacion
             return res;
 
         }
-        public List<Servicio> buscar(string nombre)
+        public List<Servicio> buscar(int idMateria)
         {
             List<Servicio> lis = new List<Servicio>();
             Servicio s;
@@ -148,9 +149,9 @@ namespace Homologacion
             //abrir la conexion 
             SqlConnection con;
             con = Conexion.conectar();
-
+      
             //command para ejecutar el query (insert)
-            SqlCommand cmd = new SqlCommand(String.Format("select * from alumno where nombre like '%{0}%'", nombre), con);
+            SqlCommand cmd = new SqlCommand(String.Format("select * from servicios where idMateria = {0}",idMateria), con);
             //ejecutar el query
             rd = cmd.ExecuteReader();
             while (rd.Read())

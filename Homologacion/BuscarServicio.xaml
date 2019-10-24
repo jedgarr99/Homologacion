@@ -13,10 +13,6 @@
                 <GradientStop Color="#FFA7FFD7" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="btBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="52,210,0,0" VerticalAlignment="Top" Width="75" Click="BtBuscar_Click" Background="#FF4FF33E"/>
-        <Label Content="ID Servicio" HorizontalAlignment="Left" Margin="52,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.618,1.304"/>
-        <TextBox x:Name="txBuscar" HorizontalAlignment="Left" Height="23" Margin="37,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid HorizontalAlignment="Left" Height="248" Margin="233,86,0,0" VerticalAlignment="Top" Width="271"/>
         <Canvas HorizontalAlignment="Left" Height="40                 " Margin="-4,0,-150,0" VerticalAlignment="Top" Width="696">
             <Button x:Name="btEliminar" Content="Eliminar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Eliminar" RenderTransformOrigin="0.293,0.527" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium"/>
             <Button x:Name="btAgregar1" Content="Agregar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Agregar" Canvas.Left="138" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium"/>
@@ -24,6 +20,12 @@
             <Button x:Name="btBuscar1" Content="Buscar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="BtBuscar_Click" Canvas.Left="418" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium"/>
             <Button x:Name="btRegresar1" Content="Salir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140                 " Height="40" Click="BtRegresar_Click" Canvas.Left="558" Foreground="Black" FontWeight="Medium" Background="#FF70FFC4"/>
         </Canvas>
+        <ComboBox x:Name="cbMateria" HorizontalAlignment="Left" Margin="52,133,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbMateria_SelectionChanged"/>
+        <ComboBox x:Name="cbDepartamento" HorizontalAlignment="Left" Margin="52,230,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Materia" HorizontalAlignment="Left" Margin="52,188,0,0" VerticalAlignment="Top" OpacityMask="Black" Background="#66C2FFF9"/>
+        <Label Content="Departamento" HorizontalAlignment="Left" Margin="52,92,0,0" VerticalAlignment="Top" Height="36" Width="86" Background="#66C2FFF9" OpacityMask="Black" RenderTransformOrigin="-1.21,0.634"/>
+        <DataGrid x:Name="dgBuscar1" HorizontalAlignment="Left" Height="100" Margin="390,155,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="142,300,0,0" VerticalAlignment="Top" Width="74"/>
 
     </Grid>
 </Window>
