@@ -141,12 +141,14 @@ namespace Homologacion
             }
         }
 
-        private void BtBuscar(object sender, RoutedEventArgs e)
+       
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             SqlCommand cmd;
             SqlDataReader rd;
             SqlConnection con;
-            int idMateria=0;
+            int idMateria = 0;
             try
             {
                 con = Conexion.conectar();
@@ -161,9 +163,8 @@ namespace Homologacion
             }
             Servicio s = new Servicio();
             s.buscar(idMateria);
-        
-            dgBuscar1.ItemsSource = s.buscar(idMateria);
 
+            dgBuscar1.ItemsSource = s.buscar(idMateria);
 
         }
     }

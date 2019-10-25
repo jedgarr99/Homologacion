@@ -17,9 +17,9 @@
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="73*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="315,106,0,0" VerticalAlignment="Top" Width="108" Height="40" Click="BtEliminar_Click" Grid.Column="1" Background="#FF4FF33E"/>
-        <Label Content="ID Servicio" HorizontalAlignment="Left" Margin="121,106,0,0" VerticalAlignment="Top" Height="26" Width="66" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txEliminar" HorizontalAlignment="Left" Height="23" Margin="62,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Button x:Name="btEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="297,86,0,0" VerticalAlignment="Top" Width="108" Height="40" Click="BtEliminar_Click" Grid.Column="1" Background="#FF4FF33E"/>
+        <Label Content="ID Servicio" HorizontalAlignment="Left" Margin="119,93,0,0" VerticalAlignment="Top" Height="26" Width="66" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txEliminar" HorizontalAlignment="Left" Height="23" Margin="60,96,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Canvas HorizontalAlignment="Left" Height="40                 " Margin="-4,0,0,0" VerticalAlignment="Top" Width="696" Grid.ColumnSpan="2">
             <Button x:Name="btEliminar1" Content="Eliminar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Eliminar" RenderTransformOrigin="0.293,0.527" Background="#FF70FFC4" Foreground="#FF020000" FontWeight="Medium"/>
             <Button x:Name="btAgregar1" Content="Agregar Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="40" Click="Button_Agregar" Canvas.Left="138" Background="#FF70FFC4" Foreground="Black" FontWeight="Medium"/>

@@ -10,16 +10,16 @@ namespace Homologacion
 {
     class Servicio
     {
-        protected Int32 idServicio { get; set; }
-        protected String lugar { get; set; }
-        protected String tipo { get; set; }
-        protected String horaInicio { get; set; }
-        protected String horaFin { get; set; }
-        protected String curso { get; set; }
-        protected Int32 año { get; set; }
-        protected Int32 idMateria { get; set; }
-        protected Int32 idDocente { get; set; }
-        protected String dia { get; set; }
+        public Int32 idServicio { get; set; }
+        public String lugar { get; set; }
+        public String tipo { get; set; }
+        public String horaInicio { get; set; }
+        public String horaFin { get; set; }
+        public String curso { get; set; }
+        public Int32 año { get; set; }
+        public Int32 idMateria { get; set; }
+        public Int32 idDocente { get; set; }
+        public String dia { get; set; }
 
 
         public Servicio(short idServicio)
@@ -162,7 +162,11 @@ namespace Homologacion
                 s.tipo = rd.GetString(2);
                 s.horaInicio = rd.GetString(3);
                 s.horaFin = rd.GetString(4);
-                s.año = rd.GetInt16(5);
+                s.curso = rd.GetString(5);
+                s.año = rd.GetInt16(6);
+                s.idMateria = rd.GetInt16(7);
+                s.idDocente = rd.GetInt16(8);
+                s.dia = rd.GetString(9);
                 lis.Add(s);
 
             }
