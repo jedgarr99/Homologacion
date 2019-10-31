@@ -41,7 +41,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se pudo llenar el combo" + ex);
+                MessageBox.Show("no se pudo llenar el combo. " + ex.Message);
             }
             try
             {
@@ -58,7 +58,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se pudo llenar el combo" + ex);
+                MessageBox.Show("no se pudo llenar el combo. " + ex.Message);
             }
 
         }
@@ -119,7 +119,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Departamento invalido " + ex);
+                MessageBox.Show("Departamento invalido. " + ex.Message);
             }
 
             try
@@ -137,7 +137,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se pudo llenar el combo" + ex);
+                MessageBox.Show("no se pudo llenar el combo. " + ex.Message);
             }
         }
 
@@ -159,7 +159,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Materia no encontrada \n " + ex);
+                MessageBox.Show("Materia no encontrada. \n " + ex.Message);
             }
             Servicio s = new Servicio();
             s.buscar(idMateria);

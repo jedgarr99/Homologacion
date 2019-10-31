@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\ATOLEDOG\Desktop\Homologacion\Homologacion\obj\Debug\
+C:\Users\ATOLEDOG\Desktop\Homologacion\Homologacion\obj\Release\
 Homologacion
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\ATOLEDOG\Desktop\Homologacion\Homologacion\App.xaml
 5-1679978747
 
@@ -16,5 +16,5 @@ C:\Users\ATOLEDOG\Desktop\Homologacion\Homologacion\App.xaml
 13-1505183044
 AgregarServicio.xaml;BuscarServicio.xaml;EliminarServicio.xaml;MainWindow.xaml;ModificarServicio.xaml;
 
-False
+True
 

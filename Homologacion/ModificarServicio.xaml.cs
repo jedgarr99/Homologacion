@@ -139,77 +139,85 @@ namespace Homologacion
                 horaFin = lbFin.SelectedItem.ToString();
 
 
-
-            if (cbLunes.IsChecked.HasValue && cbLunes.IsChecked.Value)
+            try
             {
-                if (lbInicio.SelectedIndex != -1)
+                if (cbLunes.IsChecked.HasValue && cbLunes.IsChecked.Value)
                 {
-                    s = new Servicio(short.Parse(id), horaInicio, "Lunes");
-                    s.modificarIn(s);
+                    if (lbInicio.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaInicio, "Lunes");
+                        s.modificarIn(s);
+                    }
+                    if (lbFin.SelectedIndex != -1)
+                    {
+
+                        s = new Servicio(short.Parse(id), horaFin, "Lunes");
+                        s.modificarFin(s);
+                    }
                 }
-                if (lbFin.SelectedIndex != -1)
+
+
+
+                if (cbMartes.IsChecked.HasValue && cbMartes.IsChecked.Value)
                 {
-                    s = new Servicio(short.Parse(id), horaFin, "Lunes");
-                    s.modificarFin(s);
+                    if (lbInicio.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaInicio, "Martes");
+                        s.modificarIn(s);
+                    }
+                    if (lbFin.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaFin, "Martes");
+                        s.modificarFin(s);
+                    }
+
                 }
-             
+
+                if (cbMiercoles.IsChecked.HasValue && cbMiercoles.IsChecked.Value)
+                {
+                    if (lbInicio.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaInicio, "Miercoles");
+                        s.modificarIn(s);
+                    }
+                    if (lbFin.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaFin, "Miercoles");
+                        s.modificarFin(s);
+                    }
+                }
+
+                if (cbJueves.IsChecked.HasValue && cbJueves.IsChecked.Value)
+                {
+                    if (lbInicio.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaInicio, "Jueves");
+                        s.modificarIn(s);
+                    }
+                    if (lbFin.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaFin, "Jueves");
+                        s.modificarFin(s);
+                    }
+                }
+
+                if (cbViernes.IsChecked.HasValue && cbViernes.IsChecked.Value)
+                {
+                    if (lbInicio.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaInicio, "Viernes");
+                        s.modificarIn(s);
+                    }
+                    if (lbFin.SelectedIndex != -1)
+                    {
+                        s = new Servicio(short.Parse(id), horaFin, "Viernes");
+                        s.modificarFin(s);
+                    }
+                }
             }
-
-            if (cbMartes.IsChecked.HasValue && cbMartes.IsChecked.Value)
+            catch (Exception ex)
             {
-                if (lbInicio.SelectedIndex != -1)
-                {
-                    s = new Servicio(short.Parse(id), horaInicio, "Martes");
-                    s.modificarIn(s);
-                }
-                if (lbFin.SelectedIndex != -1)
-                {
-                    s = new Servicio(short.Parse(id), horaFin, "Martes");
-                    s.modificarFin(s);
-                }
-
-            }
-
-            if (cbMiercoles.IsChecked.HasValue && cbMiercoles.IsChecked.Value)
-            {
-                if (lbInicio.SelectedIndex != -1)
-                {
-                    s = new Servicio(short.Parse(id), horaInicio, "Miercoles");
-                    s.modificarIn(s);
-                }
-                if (lbFin.SelectedIndex != -1)
-                {
-                    s = new Servicio(short.Parse(id), horaFin, "Miercoles");
-                    s.modificarFin(s);
-                }
-            }
-
-            if (cbJueves.IsChecked.HasValue && cbJueves.IsChecked.Value)
-            {
-                if (lbInicio.SelectedIndex != -1)
-                {
-                    s = new Servicio(short.Parse(id), horaInicio, "Jueves");
-                    s.modificarIn(s);
-                }
-                if (lbFin.SelectedIndex != -1)
-                {
-                    s = new Servicio(short.Parse(id), horaFin, "Jueves");
-                    s.modificarFin(s);
-                }
-            }
-
-            if (cbViernes.IsChecked.HasValue && cbViernes.IsChecked.Value)
-            {
-                if (lbInicio.SelectedIndex != -1)
-                {
-                    s = new Servicio(short.Parse(id), horaInicio, "Viernes");
-                    s.modificarIn(s);
-                }
-                if (lbFin.SelectedIndex != -1)
-                {
-                    s = new Servicio(short.Parse(id), horaFin, "Viernes");
-                    s.modificarFin(s);
-                }
+                MessageBox.Show("No se puede modificar. "+ex.Message);
             }
             
         }

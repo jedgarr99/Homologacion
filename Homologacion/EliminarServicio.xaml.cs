@@ -26,9 +26,16 @@ namespace Homologacion
 
         private void BtEliminar_Click(object sender, RoutedEventArgs e)
         {
-            String cu = txEliminar.Text;
-            Servicio s = new Servicio();
-            s.eliminar(Int32.Parse(cu));
+            try
+            {
+                String cu = txEliminar.Text;
+                Servicio s = new Servicio();
+                s.eliminar(Int32.Parse(cu));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo. "+ex.Message);
+            }
         }
 
         private void Button_Agregar(object sender, RoutedEventArgs e)

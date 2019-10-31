@@ -71,7 +71,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo agregar el Servicio" + ex);
+                MessageBox.Show("No se pudo agregar el Servicio "+ex.Message);
             }
 
             return res;
@@ -94,7 +94,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo eliminar el servicio \n" + ex);
+                MessageBox.Show("No se pudo eliminar el servicio \n"+ex.Message);
             }
 
             return res;
@@ -114,7 +114,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo modificar al alumno\n ");
+                MessageBox.Show("No se pudo modificar al alumno\n " + ex.Message);
             }
 
             return res;
@@ -134,7 +134,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo modificar al alumno\n ");
+                MessageBox.Show("No se pudo modificar al alumno\n " +ex.Message);
             }
 
             return res;

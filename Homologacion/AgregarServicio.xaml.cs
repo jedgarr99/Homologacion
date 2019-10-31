@@ -61,7 +61,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se pudo llenar el combo" + ex);
+                MessageBox.Show("no se pudo llenar el combo" + ex.Message);
             }
 
             lbInicio.Items.Add("7:00");
@@ -201,7 +201,7 @@ namespace Homologacion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Id maximo no encontrado \n " + ex);
+                    MessageBox.Show("Id maximo no encontrado. \n " + ex.Message);
                 }
                 
                 String lugar = txLugar.Text;
@@ -232,7 +232,7 @@ namespace Homologacion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Materia no encontrada \n " + ex);
+                    MessageBox.Show("Materia no encontrada \n " + ex.Message);
                 }
                 Servicio s;
                 if (cbLunes.IsChecked.HasValue && cbLunes.IsChecked.Value)
@@ -279,7 +279,7 @@ namespace Homologacion
             }
             catch(Exception ex)
             {
-                MessageBox.Show("No se pudo dar de alta" + ex);
+                MessageBox.Show("No se pudo dar de alta. " + ex.Message);
             }
             
         }
@@ -299,7 +299,7 @@ namespace Homologacion
                 x = int.Parse(rd[0].ToString());
             }
             catch(Exception ex){
-                MessageBox.Show("Departamento invalido " + ex);
+                MessageBox.Show("Departamento invalido. " + ex.Message);
             }
 
             try
@@ -317,7 +317,7 @@ namespace Homologacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se pudo llenar el combo" + ex);
+                MessageBox.Show("no se pudo llenar el combo. " + ex.Message);
             }
             //select materias.nombre from materias where materias.idDepartamento = 3
         }
