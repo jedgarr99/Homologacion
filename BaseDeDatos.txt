@@ -28,7 +28,7 @@ idAlumno smallint references alumnos );
 
 create table docentes 
 (idDocente smallint not null primary key, 
- correo varchar(50) not null,
+ correo varchar(50) not null unique,
  nombre char(30),
  apellido char(50),
  tipo char(30),
