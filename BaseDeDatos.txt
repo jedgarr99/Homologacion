@@ -1,5 +1,5 @@
 --Data Source=CC102-16\SA;Initial Catalog=baseServiciosItam;User ID=sa
-taskkill /f /im XDesProc.exe
+--taskkill /f /im XDesProc.exe
 --EXEC sp_RENAME 'departamentos.nombreDirector' , 'nombre', 'COLUMN'
 
 
@@ -80,5 +80,7 @@ insert into materias values(11, 'Problemas 2', Null, Null, 4,null);
 insert into materias values(12, 'Algoritmos y Programacion', Null, Null, 3,null);
 insert into materias values(13, 'Estructuras de Datos', Null, Null, 3,null);
 insert into materias values(14, 'Estructuras de Datos Avanzadas', Null, Null, 3,null);
-insert into docentes values(0, 'No hay ', 'No hay', 'Profesor');
+
+insert into docentes values(0,'null@itam.mx', 'No hay ', 'No hay', 'Profesor');
+insert into docentes values(1,'analidia@itam.mx', 'Ana Lidia', 'Franzoni', 'Profesor');
 

@@ -27,7 +27,7 @@ namespace Homologacion
         {
             this.idServicio = idServicio;
         }
-        public Servicio(short idServicio, string lugar, string tipo, String horaInicio, String horaFin, String curso, Int32 año, Int32 idMateria, String dia)
+        public Servicio(short idServicio, string lugar, string tipo, String horaInicio, String horaFin, String curso, Int32 año, Int32 idMateria, Int32 idDocente,String dia)
         {
             this.idServicio = idServicio;
             this.lugar = lugar;
@@ -37,7 +37,7 @@ namespace Homologacion
             this.curso = curso;
             this.año = año;
             this.idMateria = idMateria;
-            this.idDocente = 0;//corregir
+            this.idDocente = idDocente;
             this.dia = dia;
         }
         public Servicio()

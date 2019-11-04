@@ -52,6 +52,24 @@ namespace Homologacion
             }
             try
             {
+                //se intenta abrir la conexion para llenar el list box de docentes 
+                con = Conexion.conectar();
+                cmd = new SqlCommand("select docentes.idDocente from docentes", con);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    // se llena el cb departamentos ( aunque los nombres estan al reves)
+                    lbProfesor.Items.Add(rd["idDocente"].ToString());
+                }
+                //cb.SelectedIndex = 0;
+                rd.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se pudo llenar el comboooo" + ex);
+            }
+            try
+            {
                 //se intenta abrir la conexion para llenar el cb de materias
                 con = Conexion.conectar();
                 cmd = new SqlCommand("select nombre from materias", con);
@@ -69,7 +87,7 @@ namespace Homologacion
                 MessageBox.Show("no se pudo llenar el comboll" + ex.Message);
             }
             //se llena el list box de hora inicio y hora fin con intervalos de medias horas 
-
+            lbProfesor.SelectedIndex = 0;
             lbInicio.Items.Add("7:00");
             lbInicio.Items.Add("7:30");
             lbInicio.Items.Add("8:00");
@@ -223,6 +241,7 @@ namespace Homologacion
                 String horaInicio = lbInicio.SelectedItem.ToString();
                 String horaFin = lbFin.SelectedItem.ToString();
                 String curso;
+                int idProf;
                 // si se ingresa el servicio en los primeros 5 meses es que es de Primavera 
                 if (int.Parse(DateTime.Now.Month.ToString()) < 6)
                 {
@@ -260,6 +279,7 @@ namespace Homologacion
                     {
                         MessageBox.Show("Materia no encontrada \n " + ex.Message);
                     }
+                    idProf = int.Parse(lbProfesor.SelectedItem.ToString());
                     Servicio s;
                     //checa que al menos un dia este seleccionado 
                     if (cbLunes.IsChecked.HasValue && cbLunes.IsChecked.Value || cbMartes.IsChecked.HasValue && cbMartes.IsChecked.Value || cbMiercoles.IsChecked.HasValue && cbMiercoles.IsChecked.Value
@@ -268,7 +288,7 @@ namespace Homologacion
                         if (cbLunes.IsChecked.HasValue && cbLunes.IsChecked.Value)
                         {
                             //si se selecciono este dia de la semana, se da de alta un servicio en este dia 
-                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Lunes");
+                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria,idProf, "Lunes");
                             s.agregar(s);
                             id++;
                         }
@@ -276,7 +296,7 @@ namespace Homologacion
                         if (cbMartes.IsChecked.HasValue && cbMartes.IsChecked.Value)
                         {
                             //si se selecciono este dia de la semana, se da de alta un servicio en este dia 
-                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Martes");
+                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, idProf, "Martes");
                             s.agregar(s);
                             id++;
 
@@ -285,7 +305,7 @@ namespace Homologacion
                         if (cbMiercoles.IsChecked.HasValue && cbMiercoles.IsChecked.Value)
                         {
                             //si se selecciono este dia de la semana, se da de alta un servicio en este dia 
-                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Miercoles");
+                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, idProf, "Miercoles");
                             s.agregar(s);
                             id++;
                         }
@@ -293,7 +313,7 @@ namespace Homologacion
                         if (cbJueves.IsChecked.HasValue && cbJueves.IsChecked.Value)
                         {
                             //si se selecciono este dia de la semana, se da de alta un servicio en este dia 
-                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Jueves");
+                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, idProf, "Jueves");
                             s.agregar(s);
                             id++;
                         }
@@ -301,7 +321,7 @@ namespace Homologacion
                         if (cbViernes.IsChecked.HasValue && cbViernes.IsChecked.Value)
                         {
                             //si se selecciono este dia de la semana, se da de alta un servicio en este dia 
-                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, "Viernes");
+                            s = new Servicio(id, lugar, tipo, horaInicio, horaFin, curso, año, idMateria, idProf, "Viernes");
                             s.agregar(s);
                             id++;
                         }
