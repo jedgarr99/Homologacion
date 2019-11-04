@@ -1,5 +1,7 @@
 --Data Source=CC102-16\SA;Initial Catalog=baseServiciosItam;User ID=sa
 taskkill /f /im XDesProc.exe
+--EXEC sp_RENAME 'departamentos.nombreDirector' , 'nombre', 'COLUMN'
+
 
 create database baseServiciosItam; 
 
@@ -26,6 +28,7 @@ idAlumno smallint references alumnos );
 
 create table docentes 
 (idDocente smallint not null primary key, 
+ correo varchar(50) not null,
  nombre char(30),
  apellido char(50),
  tipo char(30),
@@ -79,4 +82,3 @@ insert into materias values(13, 'Estructuras de Datos', Null, Null, 3,null);
 insert into materias values(14, 'Estructuras de Datos Avanzadas', Null, Null, 3,null);
 insert into docentes values(0, 'No hay ', 'No hay', 'Profesor');
 
-EXEC sp_RENAME 'departamentos.nombreDirector' , 'nombre', 'COLUMN'

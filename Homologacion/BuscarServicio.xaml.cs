@@ -26,7 +26,7 @@ namespace Homologacion
             SqlCommand cmd;
             SqlDataReader rd;
             SqlConnection con;
-          try
+            try
             {
 
                 con = Conexion.conectar();
@@ -64,14 +64,14 @@ namespace Homologacion
         }
 
 
-
+        // se cambia a la ventana elegida 
         private void Button_Agregar(object sender, RoutedEventArgs e)
         {
             AgregarServicio w = new AgregarServicio();
             w.Show();
             this.Close();
         }
-
+        // se cambia a la ventana elegida 
         private void Button_Eliminar(object sender, RoutedEventArgs e)
         {
             EliminarServicio w = new EliminarServicio();
@@ -80,22 +80,21 @@ namespace Homologacion
 
         }
 
-
-
+        // se cambia a la ventana elegida 
         private void BtRegresar_Click(object sender, RoutedEventArgs e)
         {
             MainWindow w = new MainWindow();
             w.Show();
             this.Close();
         }
-
+        // se cambia a la ventana elegida 
         private void BtModificar_Click(object sender, RoutedEventArgs e)
         {
             ModificarServicio w = new ModificarServicio();
             w.Show();
             this.Close();
         }
-
+        // se cambia a la ventana elegida 
         private void BtBuscar_Click(object sender, RoutedEventArgs e)
         {
             BuscarServicio w = new BuscarServicio();
@@ -105,12 +104,16 @@ namespace Homologacion
 
         private void cbMateria_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // si se elige un departamento, la lista de materias disponibles se limita a las de ese departamento 
             SqlCommand cmd;
             SqlDataReader rd;
             SqlConnection con;
             int x = -1;
+
             try
             {
+
+                // se obtiene el id del departamento elegido 
                 con = Conexion.conectar();
                 cmd = new SqlCommand(String.Format("select departamentos.idDepartamento from departamentos where departamentos.nombre = '{0}'", cbMateria.SelectedItem.ToString()), con);
                 rd = cmd.ExecuteReader();
@@ -124,6 +127,7 @@ namespace Homologacion
 
             try
             {
+                // se llena el combo box de las materias con las que pertenecen al departamento indicado 
                 cbDepartamento.Items.Clear();
                 con = Conexion.conectar();
                 cmd = new SqlCommand(String.Format("select materias.nombre from materias where materias.idDepartamento = {0}", x), con);
@@ -139,32 +143,40 @@ namespace Homologacion
             {
                 MessageBox.Show("no se pudo llenar el combo. " + ex.Message);
             }
+
         }
-
-       
-
+        //busca los servicios que pertenezcan a la materia seleccionada 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SqlCommand cmd;
             SqlDataReader rd;
             SqlConnection con;
             int idMateria = 0;
-            try
+            if (cbDepartamento.SelectedIndex != -1)
             {
-                con = Conexion.conectar();
-                cmd = new SqlCommand(String.Format("select materias.idMateria from materias where materias.nombre='{0}'", cbDepartamento.SelectedItem.ToString()), con);
-                rd = cmd.ExecuteReader();
-                rd.Read();
-                idMateria = int.Parse(rd[0].ToString());
+                try
+                {
+                    //obtiene el id de la materia seleccionada 
+                    con = Conexion.conectar();
+                    cmd = new SqlCommand(String.Format("select materias.idMateria from materias where materias.nombre='{0}'", cbDepartamento.SelectedItem.ToString()), con);
+                    rd = cmd.ExecuteReader();
+                    rd.Read();
+                    idMateria = int.Parse(rd[0].ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Materia no encontrada. \n " + ex.Message);
+                }
+                Servicio s = new Servicio();
+                // llama al metodo de busqueda con el id de materia ya encontrado 
+                s.buscar(idMateria);
+                // llena el data grid con la informacion encontrada 
+                dgBuscar1.ItemsSource = s.buscar(idMateria);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Materia no encontrada. \n " + ex.Message);
+                MessageBox.Show("Materia no seleccionada");
             }
-            Servicio s = new Servicio();
-            s.buscar(idMateria);
-
-            dgBuscar1.ItemsSource = s.buscar(idMateria);
 
         }
     }

@@ -23,6 +23,8 @@ namespace Homologacion
         public ModificarServicio()
         {
             InitializeComponent();
+            //se llena el list box de hora inicio y hora fin con intervalos de medias horas 
+
             lbInicio.Items.Add("7:00");
             lbInicio.Items.Add("7:30");
             lbInicio.Items.Add("8:00");
@@ -86,14 +88,14 @@ namespace Homologacion
             lbFin.Items.Add("21:30");
         }
 
-       
+        // cambia a la ventana elegida 
         private void Button_Agregar(object sender, RoutedEventArgs e)
         {
             AgregarServicio w = new AgregarServicio();
             w.Show();
             this.Close();
         }
-
+        // cambia a la ventana elegida 
         private void Button_Eliminar(object sender, RoutedEventArgs e)
         {
             EliminarServicio w = new EliminarServicio();
@@ -101,23 +103,21 @@ namespace Homologacion
             this.Close();
 
         }
-
-
-
+        // cambia a la ventana elegida 
         private void BtRegresar_Click(object sender, RoutedEventArgs e)
         {
             MainWindow w = new MainWindow();
             w.Show();
             this.Close();
         }
-
+        // cambia a la ventana elegida 
         private void BtModificar_Click(object sender, RoutedEventArgs e)
         {
             ModificarServicio w = new ModificarServicio();
             w.Show();
             this.Close();
         }
-
+        // cambia a la ventana elegida 
         private void BtBuscar_Click(object sender, RoutedEventArgs e)
         {
             BuscarServicio w = new BuscarServicio();
@@ -125,101 +125,70 @@ namespace Homologacion
             this.Close();
         }
 
+        // se modifica la hora inicial y/o la hora final del servicio con el id proporcionado 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             String id = txEliminar.Text;
-            Int32 x;
+            Int32 x=0;
+            short idI = 0;
             StringBuilder bui = new StringBuilder();
-            String horaInicio="", horaFin="";
+            String horaInicio = "", horaFin = "";
             Servicio s;
-            if (lbInicio.SelectedIndex!=-1)
-                horaInicio = lbInicio.SelectedItem.ToString();
-            if (lbFin.SelectedIndex != -1)
-                horaFin = lbFin.SelectedItem.ToString();
-
-
-            try
+            if (id != "")
             {
-                if (cbLunes.IsChecked.HasValue && cbLunes.IsChecked.Value)
+                if (lbInicio.SelectedIndex != -1)
+                    horaInicio = lbInicio.SelectedItem.ToString();
+                if (lbFin.SelectedIndex != -1)
+                    horaFin = lbFin.SelectedItem.ToString();
+                try
                 {
-                    if (lbInicio.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaInicio, "Lunes");
-                        s.modificarIn(s);
-                    }
-                    if (lbFin.SelectedIndex != -1)
-                    {
+                    idI = short.Parse(id);
 
-                        s = new Servicio(short.Parse(id), horaFin, "Lunes");
-                        s.modificarFin(s);
-                    }
+                }catch(Exception ex)
+                {
+                }
+                if (lbInicio.SelectedIndex != -1)
+                {
+                    s = new Servicio(idI, horaInicio);
+                    x = s.modificarIn(s);
+                }
+                if (lbFin.SelectedIndex != -1)
+                {
+
+                    s = new Servicio(idI, horaFin);
+                    x = s.modificarFin(s);
+                }
+                if (lbInicio.SelectedIndex == -1 && lbFin.SelectedIndex == -1)
+                {
+                    MessageBox.Show("No se selecciono hora de inicio u hora de fin a cambiar");
+                }
+                else if (x == 0)
+                {
+                    MessageBox.Show("Id incorrecto");
+                }
+                else
+                {
+                    MessageBox.Show("Modificacion exitosa");
                 }
 
-
-
-                if (cbMartes.IsChecked.HasValue && cbMartes.IsChecked.Value)
-                {
-                    if (lbInicio.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaInicio, "Martes");
-                        s.modificarIn(s);
-                    }
-                    if (lbFin.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaFin, "Martes");
-                        s.modificarFin(s);
-                    }
-
-                }
-
-                if (cbMiercoles.IsChecked.HasValue && cbMiercoles.IsChecked.Value)
-                {
-                    if (lbInicio.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaInicio, "Miercoles");
-                        s.modificarIn(s);
-                    }
-                    if (lbFin.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaFin, "Miercoles");
-                        s.modificarFin(s);
-                    }
-                }
-
-                if (cbJueves.IsChecked.HasValue && cbJueves.IsChecked.Value)
-                {
-                    if (lbInicio.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaInicio, "Jueves");
-                        s.modificarIn(s);
-                    }
-                    if (lbFin.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaFin, "Jueves");
-                        s.modificarFin(s);
-                    }
-                }
-
-                if (cbViernes.IsChecked.HasValue && cbViernes.IsChecked.Value)
-                {
-                    if (lbInicio.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaInicio, "Viernes");
-                        s.modificarIn(s);
-                    }
-                    if (lbFin.SelectedIndex != -1)
-                    {
-                        s = new Servicio(short.Parse(id), horaFin, "Viernes");
-                        s.modificarFin(s);
-                    }
-                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("No se puede modificar. "+ex.Message);
+                MessageBox.Show("Parametro de ID vacio");
             }
             
+        }
+
+        private void lbInicio_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            //una vez que se elige la hora inicial, se cambia a la vista la hora final de hora y media despues para que sea mas facil
+            //encontrar la hora deseada 
+            int pos = lbInicio.SelectedIndex;
+            pos += 3;
+            string x = lbFin.Items[pos].ToString();
+            lbFin.ScrollIntoView(x);
         }
     }
 }

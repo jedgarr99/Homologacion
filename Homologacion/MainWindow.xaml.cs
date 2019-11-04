@@ -34,19 +34,20 @@ namespace Homologacion
             this.Close();
             */
             String res = Conexion.comprobarPwd(txUsuario.Text, txContraseña.Text);
-            if (res.Equals("contraseña correcta"))
+            if (res.Equals("Contraseña correcta"))
             {
                 //MessageBox.Show("Mandar a la siguiente pantalla");
-                 AgregarServicio w = new AgregarServicio();
-            w.Show();
-            this.Close();
+                AgregarServicio w = new AgregarServicio();
+                w.Show();
+                this.Close();
+                
             }
             else
             {
                 MessageBox.Show(res);
 
             }
-               
+
 
         }
     }

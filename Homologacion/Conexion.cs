@@ -13,13 +13,15 @@ namespace Homologacion
     {
         SqlCommand cmd;
         SqlDataReader rd;
+        //abre una conexion y se conecta con la base de datos 
         public static SqlConnection conectar()
         {
             SqlConnection cnn;
             try
             {
-                
-                cnn = new SqlConnection("Data Source = 112SALAS01; Initial Catalog = baseServiciosItam; User ID = sa; Password = sqladmin");
+              
+                cnn = new SqlConnection("Data Source =JORGE; Initial Catalog = baseServiciosItam; User ID = sa; Password = sqladmin");
+                //cnn = new SqlConnection("Data Source = 112SALAS01; Initial Catalog = baseServiciosItam; User ID = sa; Password = sqladmin");
                 //cnn = new SqlConnection("Data Source=CC102-16\\SA;Initial Catalog=baseServiciosItam;User ID=sa;Password=adminadmin");
                 cnn.Open();
                 //MessageBox.Show("Si se pudo hacer la coneccion");
@@ -31,6 +33,7 @@ namespace Homologacion
             }
             return cnn;
         }
+        // checa que la contraseña y el usuario proporcionados sean correctos 
         public static String comprobarPwd(String usuario, String contra)
         {
             String res = "error";
@@ -45,13 +48,13 @@ namespace Homologacion
                 {
                     String str = rd.GetString(0);
                     if (str.Equals(contra))
-                        res = "contraseña correcta";
+                        res = "Contraseña correcta";
                     else
-                        res = "pwd incorrecta";
+                        res = "Contraseña incorrecta";
                 }
                 else
                 {
-                    res = "usuario incorrecto";
+                    res = "Usuario incorrecto";
                 }
             }
             catch (Exception ex)
@@ -60,6 +63,7 @@ namespace Homologacion
             }
             return res;
         }
+        // metodo que llena un combo box 
         public void llenarComboAlta(ComboBox cb)
         {
             try
