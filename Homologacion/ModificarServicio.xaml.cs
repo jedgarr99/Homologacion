@@ -130,7 +130,7 @@ namespace Homologacion
         {
 
             String id = txEliminar.Text;
-            Int32 x=0;
+            Int32 x=-1;
             short idI = 0;
             StringBuilder bui = new StringBuilder();
             String horaInicio = "", horaFin = "";
@@ -144,34 +144,42 @@ namespace Homologacion
                 try
                 {
                     idI = short.Parse(id);
+                    x = 0;
 
                 }catch(Exception ex)
                 {
                 }
-                if (lbInicio.SelectedIndex != -1)
+                if (x != -1)
                 {
-                    s = new Servicio(idI, horaInicio);
-                    x = s.modificarIn(s);
-                }
-                if (lbFin.SelectedIndex != -1)
-                {
+                    if (lbInicio.SelectedIndex != -1)
+                    {
+                        s = new Servicio(idI, horaInicio);
+                        x = s.modificarIn(s);
+                    }
+                    if (lbFin.SelectedIndex != -1)
+                    {
 
-                    s = new Servicio(idI, horaFin);
-                    x = s.modificarFin(s);
-                }
-                if (lbInicio.SelectedIndex == -1 && lbFin.SelectedIndex == -1)
-                {
-                    MessageBox.Show("No se selecciono hora de inicio u hora de fin a cambiar");
-                }
-                else if (x == 0)
-                {
-                    MessageBox.Show("Id incorrecto");
+                        s = new Servicio(idI, horaFin);
+                        x = s.modificarFin(s);
+                    }
+                    if (lbInicio.SelectedIndex == -1 && lbFin.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("No se selecciono hora de inicio u hora de fin a cambiar");
+                    }
+                    else if( x==0)
+                    {
+                        MessageBox.Show("Id no existente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Modificacion exitosa");
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Modificacion exitosa");
+                    MessageBox.Show("Id incorrecto");
                 }
-
             }
             else
             {

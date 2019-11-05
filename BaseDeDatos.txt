@@ -62,6 +62,8 @@ insert into departamentos values(2, 'Matematicas', 'Carlos Bosch');
 insert into departamentos values(3, 'Ingenierias', 'Marcelo Mejia');
 insert into departamentos values(4, 'Estudios Generales', 'Jose Alzaga');
 
+insert into servicios values(0,null,null,null,null,null,null,null, null, null);
+
 insert into materias values(1, 'Economia 1', Null, Null, 1,null);
 insert into materias values(2, 'Economia 2', Null, Null, 1,null);
 insert into materias values(3, 'Economia 3', Null, Null, 1,null);
